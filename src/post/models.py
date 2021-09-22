@@ -1,5 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from django.db.models.base import Model
+
+
+class User(AbstractUser):
+    pass
+
+    def __str__(self):
+        return self.username
 
 
 class Post(models.Model):
@@ -8,14 +16,14 @@ class Post(models.Model):
     thumbnail = models.ImageField()
     publish_date = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
-    # autor = models.ForeignKey()
+    autor = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
 
 
 class Comment(models.Model):
-    # user = model.ForeignKey()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
@@ -25,7 +33,7 @@ class Comment(models.Model):
 
 
 class PostView(models.Model):
-    # user = model.ForeignKey()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
 
@@ -34,7 +42,7 @@ class PostView(models.Model):
 
 
 class Like(models.Model):
-    # user = model.ForeignKey()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
     def __str__(self):

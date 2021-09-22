@@ -125,6 +125,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+AUTH_USER_MODEL = 'post.User'
 
 
 # Default primary key field type
