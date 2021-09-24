@@ -1,8 +1,27 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    
+    {% block content %}
+    <div class="container">
+        <h1>Esta es la Vista de {{ view_type }}</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class='btn btn-primary' type='submit'>{{ view_type|title }}</button>
+        </form>
+    </div>
+    
+    {% endblock content %}
+    
+</body>
+</html>
 
-{% block content %}
-<div class="container">
-   <h1>Esta es la Vista</h1>
-</div>
 
-{% endblock content %}

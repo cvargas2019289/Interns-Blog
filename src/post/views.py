@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from post.models import Post, PostView, Like, Comment
+from .forms import PostForm
 # Create your views here.
 
 
@@ -13,19 +14,31 @@ class PostDetailView(DetailView):
 
 
 class PostCreateView(CreateView):
+    form_class = PostForm
     model = Post
+    success_url = '/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'view_type': 'crear'
+        })
+        return context
 
 
 class PostUpdateView(UpdateView):
+    form_class = PostForm
     model = Post
-    fields = (
-        'title',
-        'content',
-        'thumbnail',
-        'autor',
-        'slug',
-    )
+    success_url = '/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'view_type': 'actualizar'
+        })
+        return context
 
 
 class PostDeleteView(DeleteView):
     model = Post
+    success_url = '/'
