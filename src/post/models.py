@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.shortcuts import reverse
 from django.db.models.base import Model
 
 
@@ -21,6 +22,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("detail", kwargs={
+            'slug': self.slug
+        })
 
 
 class Comment(models.Model):
