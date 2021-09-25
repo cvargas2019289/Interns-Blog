@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Interns</title>
+    <link href="{% static './base.css' %}" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+
+    <script src="https://kit.fontawesome.com/d88c1d6e67.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <div class="navegacion">
+        <nav>
+            <ul>
+                <li><a href="#">Inicio <span class="icon icon-up-dir"></span></a></li>
+    
+            </ul>
+        </nav>
+    </div>
+
+    <div class="contenido">
+        <h1 class="titulo"><i class="fas fa-location-arrow"></i>POST INTERNS</h1>
+    </div>
+
     {% block content %}
     {% endblock content %}
 
@@ -21,6 +40,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
         integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
         crossorigin="anonymous"></script>
+
+
     
 </body>
 </html>

@@ -3,7 +3,18 @@
 {% block content %}
       <div class="container">
           {% for object in object_list %}
-          {{object.title}}
+    <a href="#">
+        <br>
+    </br>
+    <div class="card" style="width: 18rem;">
+        <img src="{{ object.thumbnail.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{object.title}}</h5>
+            <p class="card-text">{{ object.content|truncatechars:9 }}</p>
+        </div>
+    </div>
+    </a>
+
           {% endfor %}
       </div>
 
