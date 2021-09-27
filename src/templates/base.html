@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Interns</title>
     <link href="{% static './base.css' %}" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="https://blogandweb.com/wp-content/uploads/2008/12/blogger-ibrandify.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
@@ -18,7 +19,8 @@
     <div class="navegacion">
         <nav>
             <ul>
-                <li><a href="#">Inicio <span class="icon icon-up-dir"></span></a></li>
+                <li><a href="{% url 'list' %}">Inicio <span class="icon icon-up-dir"></span></a></li>
+                <li><a href="{% url 'create' %}">Crear <span class="icon icon-up-dir"></span></a></li>
     
             </ul>
         </nav>
