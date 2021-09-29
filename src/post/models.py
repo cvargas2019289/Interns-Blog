@@ -34,6 +34,10 @@ class Post(models.Model):
         })
 
     @property
+    def comments(self):
+        return self.comment_set.all()
+
+    @property
     def get_comment_count(self):
         return self.comment_set.all().count()
 

@@ -22,7 +22,7 @@
                             <span><i class="fas fa-comments ml-2"> </i>{{ object.get_comment_count }}</span>
                         </p>
                         <p class="card-text">
-                            Posted {{ object.publish_date|timesince }} ago
+                            <p><i class="fas fa-stopwatch ml-2"></i> Publicado</p>{{ object.publish_date|timesince }} ago
 
                         </p>
                 </div>
