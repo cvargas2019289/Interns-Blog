@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png">
     <title>Crear</title>
 </head>
 
@@ -13,7 +14,7 @@
     
     {% block content %}
     <div class="container">
-        <h1>Esta es la Vista de {{ view_type }}</h1>
+        <h1 >Agregar Post</h1>
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}

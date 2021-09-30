@@ -29,19 +29,21 @@
    <hr/>
 
    <div>
-       <h4>Enjoy this post? give it a like</h4>
+       <h5>Si te gusta el post deja tu like! </h5>
        <a class="text-muted" href="{{ object.get_like_url }}">
            <i class="fas fa-thumbs-up fa-lg"></i>
            {{ object.get_like_count }}
        </a>
        <hr/>
        {% if request.user.is_authenticated %}
-       <h4>leave a comment below</h4>
+       <h5>Dejanos tus comentarios Aqui!</h5>
        <form method="POST">
            {% csrf_token %}
            {{ form|crispy}}
+           <br/>
            <button class="btn btn-primary" type="submit">Comentar</button>
        </form>
+       <br/>
        <h5>Comentarios</h5>
        {% for comment in object.comments %}
         <div>
